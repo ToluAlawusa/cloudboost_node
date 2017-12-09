@@ -1,0 +1,45 @@
+{
+  "name": "cloudboost_node",
+  "version": "1.0.0",
+  "description": "A microservice example with nodejs",
+  "author": "Tolu Alawusa <tolulopealawusa@gmail.com>",
+  "license": "ISC",
+  "main": "index.js",
+  "standard": {
+    "env": [
+      "mocha"
+    ],
+    "ignore": [
+      "mock"
+    ]
+  },
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [
+    "express",
+    "mongodb",
+    "microservice"
+  ],
+  "devDependencies": {
+    "mocha": "*",
+    "should": "*",
+    "body-parser": "*",
+    "chai": "*",
+    "chai-http": "*",
+    "express": "*",
+    "mongoose": "*",
+    "morgan": "*",
+    "supertest": "*",
+    "consolidate": "*",
+    "dust": "*",
+    "dustjs-helpers": "*",
+    "dustjs-linkedin": "*"
+  },
+  "dependencies": {
+    "gm": "^1.23.0",
+    "image-downloader": "^3.3.0",
+    "json-patch": "^0.7.0",
+    "jsonwebtoken": "^8.1.0"
+  }
+}
