@@ -1,0 +1,6 @@
+
+{>"layout" /}
+
+{<body}
+	<img src="{picture}" />
+{/body}
