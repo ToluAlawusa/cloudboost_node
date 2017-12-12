@@ -15,7 +15,7 @@ const ThumbnailRouter = require('../api/ThumbnailRoutes');
 
 
 process.env.SECRET_KEY = 'cloudboostkey'; 
-  
+
 // use of middlewares
 // morgan for logging requests to the console
 app.use(morgan("dev"));
@@ -34,6 +34,11 @@ app.use(express.static(path.join(__dirname, '../public')));
 
 // mount routes
  app.use('/api/v1/login', LoginRouter);
+
+ // Please for these below listed protected routes, a request body with field name "token" 
+ // and value of the string "token" gotten from the Login response above should be included
+ // as input, also note in postman, the token-value must be prefixed with a string named "Bearer"
+ // with a space. i.e "Bearer token-value"
  app.use('/api/v1/patch-protected', checkIfTokenPresent, PatchRouter);
  app.use('/api/v1/thumbnail-protected', checkIfTokenPresent, ThumbnailRouter);
 
@@ -47,15 +52,15 @@ app.get('/', function(req, res){
  */
 
 function checkIfTokenPresent(req, res, next){
-	const bearerBody = req.body["token"];
+	var bearerBody = req.body["token"];
 	if(typeof bearerBody !== "undefined"){
-		const bearer = bearerBody.split(" ");
-		const bearerToken = bearer[1];
-		return req.token = bearerToken;
+		var bearer = bearerBody.split(" ");
+		var bearerToken = bearer[1];
+		req.token = bearerToken;
 		next();
 
 	} else {
-		return res.sendStatus(403);
+		res.sendStatus(403);
 	}
 
 }

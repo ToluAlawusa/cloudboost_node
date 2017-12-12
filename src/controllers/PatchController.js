@@ -16,7 +16,7 @@ module.exports.patchAuthenticate = function(req, res) {
 		} else {
 			const userInput = {
 		    username: "gbenga",
-		    password: "animashaun"
+		    password: "Dhalanla",
 		    };
 
 			const thepatch = [
@@ -25,10 +25,10 @@ module.exports.patchAuthenticate = function(req, res) {
 
 			const mergedDoc = jsonpatch.apply(userInput, thepatch);
 			
-			return res.json({
+			 return res.json({
 				data: mergedDoc,
 				success: true
 			});
-		}
+		} 
 	})
 }

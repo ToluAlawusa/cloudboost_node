@@ -5,14 +5,7 @@
   "author": "Tolu Alawusa <tolulopealawusa@gmail.com>",
   "license": "ISC",
   "main": "index.js",
-  "standard": {
-    "env": [
-      "mocha"
-    ],
-    "ignore": [
-      "mock"
-    ]
-  },
+  
   "scripts": {
     "start": "node src/index.js",
     "test": "mocha src/server/specs.js"
@@ -20,7 +13,6 @@
   },
   "keywords": [
     "express",
-    "mongodb",
     "microservice"
   ],
   "devDependencies": {
